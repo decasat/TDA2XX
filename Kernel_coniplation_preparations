@@ -7,6 +7,16 @@ and then try to modify resulting .config.
 
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
 
+output : arch/arm/boot/zImage
+         arch/arm/boot/dts/dra7-evm-infoadas.dtb
 
 
 
+for Uboot compilation:
+
+{uboot_source}$make dra7xx_evm_defconfig ARCH=arm
+{uboot_source}$make menuconfig ARCH=arm 
+{uboot_source}$make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-
+
+
+output : MLO and u-boot.img
